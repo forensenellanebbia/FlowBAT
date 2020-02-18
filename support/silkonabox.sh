@@ -234,8 +234,9 @@ EOF
 fi
 
 ## Download country code database - These can be updated as needed via the commands below
-wget http://geolite.maxmind.com/download/geoip/database/GeoIPCountryCSV.zip
-unzip GeoIPCountryCSV.zip ; cat GeoIPCountryWhois.csv | rwgeoip2ccmap --csv-input > country_codes.pmap
+wget https://mailfud.org/geoip-legacy/GeoIP-legacy.csv.gz
+gunzip GeoIP-legacy.csv.gz
+rwgeoip2ccmap --input-file=GeoIP-legacy.csv --mode=ipv4 --output-file=country_codes.pmap
 sudo mv country_codes.pmap /usr/local/share/silk/
 
 # Start up services
