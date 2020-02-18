@@ -6,9 +6,9 @@
 exec >  >(tee -a silkinstall.log)
 exec 2> >(tee -a silkinstall.log >&2)
 
-silkversion=$(echo "3.16.0")
-yafversion=$(echo "2.9.3")
-lfbversion=$(echo "1.8.0")
+silkversion=$(echo "3.19.0")
+yafversion=$(echo "2.11.0")
+lfbversion=$(echo "2.3.1")
 workingDir=$PWD
 
 ask() {
